@@ -4,7 +4,7 @@ import { TemaComponent } from './components/tema/tema.component';
 import { MantenimientoComponent } from './components/mantenimiento/mantenimiento.component';
 import { AgregarComponent } from './components/mantenimiento/agregar.component';
 import { AuthGuardService } from './services/auth-guard.service';
-// comment
+// comment otro coment
 
 
 const APP_ROUTES: Routes = [

@@ -1,0 +1,45 @@
+<div class="main-container animated fadeIn fast">
+    <div class="container">
+        <div class="container">
+            <div class="card-columns">
+                <div *ngFor="let etiqueta of preguntas | keys">
+                    <div *ngIf="etiqueta == categoria">
+                        <div *ngFor="let key of preguntas[etiqueta] | keys ; let i=index " class="card ">
+                            <img class="card-img-top " [src]="preguntas[etiqueta][key].foto " alt="Card image cap ">
+                            <div class="card-body ">
+                                <h5 class="card-title text-center ">{{ preguntas[etiqueta][key].pregunta}}</h5>
+                                <p class="card-text text-center ">{{ preguntas[etiqueta][key].respuesta_corta}}</p>
+                                <button (click)="verMas(preguntas[etiqueta][key])" type="button" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-block btn-outline-success">Ver más...</button>
+                                <p class="text-right mt-4 "> #{{ preguntas[etiqueta][key].categoria }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div *ngIf="cargar" class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">{{ tarjeta.pregunta }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+            <img [src]="tarjeta.foto" class="img-fluid" alt="">
+
+            <div *ngFor="let parrafo of parrafos" class="modal-body">
+                <p class="text-justify m-0">
+                    {{ parrafo }}
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Volver</button>
+            </div>
+        </div>
+    </div>
+</div>

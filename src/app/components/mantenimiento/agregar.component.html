@@ -1,0 +1,59 @@
+<div class="main-container animated fadeIn fast">
+    <h3 class="text-center">Agregar Información</h3>
+
+    <button [routerLink]="['/mantenimiento']" class="btn btn-outline-danger ml-4">Regresar</button>
+
+    <button (click)="agregarNueva(forma)" class="btn btn-outline-success ml-4">Nueva Pregunta</button>
+    <hr>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form (ngSubmit)="guardar(forma)" #forma="ngForm">
+                    <div class="form-group">
+                        <label for="">Tema</label>
+                        <select [(ngModel)]="nueva_pregunta.categoria" name="categoria" class="form-control" id="">
+                                        <option value="historia">Historia</option>
+                                        <option value="geografia">Geografía</option>
+                                        <option value="artes">Artes</option>
+                                        <option value="deportes">Deportes</option>
+                                        <option value="cultura">Cultura</option>
+                                        <option value="gastronomia">Gastronomía</option>
+                                        <option value="politica">Política</option>
+                                        <option value="ciencias">Ciencias</option>
+                                    </select>
+                    </div>
+                    <!--
+     <div class="form-group">
+                        <label>Id_pregunta</label>
+                        <input [(ngModel)]="nueva_pregunta.id_pregunta" type="text" name="id_pregunta" class="form-control" placeholder="id de la pregunta" required>
+                    </div>
+
+-->
+                    <div class="form-group">
+                        <label>Pregunta</label>
+                        <input [(ngModel)]="nueva_pregunta.pregunta" type="text" name="pregunta" class="form-control" placeholder="titulo de la pregunta" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Respuesta corta</label>
+                        <input [(ngModel)]="nueva_pregunta.respuesta_corta" type="text" name="respuesta_corta" class="form-control" placeholder="respuesta corta" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Respuesta larga</label>
+                        <textarea [(ngModel)]="nueva_pregunta.respuesta_larga" type="text" name="respuesta_larga" class="form-control respuesta-larga" placeholder="respuesta larga" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Foto</label>
+                        <textarea [(ngModel)]="nueva_pregunta.foto" type="text" name="foto" class="form-control" placeholder="referencia de foto" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button [disabled]="!forma.valid" type="submit" class="btn btn-outline-success">Guardar Cambios</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,67 @@
+<!-- Banner -->
+
+<div class="container-fluid">
+    <div class="row banner">
+        <div class="col-sm-12 col-md-4">
+            <img class="img-fluid mt-3 mb-3" src="/src/assets/img/mexico.jpg" alt="">
+        </div>
+        <div class="titulo col-sm-12 col-md-4 text-center">
+            <h2>Apre<span class="span-2">nder M</span><span class="span-1">éxico</span></h2>
+
+        </div>
+        <div class="botones-banner col-sm-12 col-md-4 text-center">
+            <button *ngIf="!auth.isAuthenticated()" (click)="login()" class="boton-cuestionario mb-2 btn btn-sm btn-outline-success">Ingresar</button>
+            <button *ngIf="auth.isAuthenticated()" (click)="salir()" class="boton-cuestionario mb-2 btn btn-sm btn-outline-success">Salir</button>
+        </div>
+
+    </div>
+</div>
+<!-- FIN Banner -->
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item" [routerLinkActive]="['active']">
+                <a class="nav-link" [routerLink]="['inicio']">Inicio</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']">
+                <a class="nav-link" [routerLink]="['/tema','historia']">Historia</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']">
+                <a class="nav-link" [routerLink]="['/tema','geografia']">Geografía</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']">
+                <a class="nav-link" [routerLink]="['/tema','cultura']">Cultura</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']">
+                <a class="nav-link" [routerLink]="['/tema','deportes']">Deportes</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']">
+                <a class="nav-link" [routerLink]="['/tema','gastronomia']">Gastronomía</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']">
+                <a class="nav-link" [routerLink]="['/tema','artes']">Artes</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']">
+                <a class="nav-link" [routerLink]="['/tema','politica']">Política</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']">
+                <a class="nav-link" [routerLink]="['/tema','ciencias']">Ciencias</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']" *ngIf="auth.isAuthenticated()">
+                <a class="nav-link" [routerLink]="['mantenimiento']">Cargar info</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+    </div>
+</nav>
+
+<!-- Fin Navbar-->

@@ -1,0 +1,146 @@
+.main-container {
+    margin-top: 40px;
+    margin-bottom: 150px;
+}
+
+.banner {
+    min-height: 9rem;
+    ;
+    background-color: black;
+}
+
+.banner .titulo h2 {
+    font-size: 4rem;
+    color: rgb(0, 85, 0);
+}
+
+.span-2 {
+    color: azure;
+}
+
+.span-1 {
+    color: rgb(158, 8, 8);
+}
+
+.banner .button {
+    padding-left: 7rem;
+}
+
+.botones-banner {
+    align-items: center;
+}
+
+.banner img {
+    min-height: 8rem;
+    max-height: none;
+    display: block;
+}
+
+.boton-cuestionario {
+    float: center;
+    width: 60%
+}
+
+.boton-cargar {
+    float: center;
+    width: 60%;
+    margin: 0.5rem;
+}
+
+.tarjetas {
+    height: 20rem;
+}
+
+.categoria {
+    text-transform: capitalize;
+}
+
+.navbar {}
+
+.card-columns {
+    column-count: 1;
+}
+
+.respuesta-larga {
+    min-height: 20rem;
+}
+
+
+/* Animaciones */
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.fast {
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+}
+
+@media (min-width: 480px) {
+    .card-columns {
+        column-count: 2;
+    }
+}
+
+@media (min-width: 768px) {
+    .banner img {
+        max-height: 8rem;
+        display: block;
+    }
+    .banner .titulo h2 {
+        font-size: 2.1rem;
+        margin-top: 4rem;
+    }
+    .card-columns {
+        column-count: 3;
+    }
+    .boton-cuestionario {
+        float: right;
+        width: 8.5rem;
+        margin-top: 4rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .banner img {
+        max-height: 8rem;
+        display: block;
+    }
+    .banner .titulo h2 {
+        font-size: 2.6rem;
+        margin-top: 4rem;
+    }
+    .card-columns {
+        column-count: 4;
+    }
+    .boton-cuestionario {
+        float: right;
+        width: 8.5rem;
+        margin-top: 4.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .card-columns {
+        column-count: 5;
+    }
+}
